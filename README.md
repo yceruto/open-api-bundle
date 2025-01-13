@@ -33,9 +33,9 @@ use OpenSolid\OpenApiBundle\Routing\Attribute\Post;
 class PostProductAction
 {
     #[Post('/products')]
-    public function __invoke(#[Payload] PostProductPayload $Payload): Product
+    public function __invoke(#[Payload] PostProductPayload $payload): Product
     {
-        return new Product($body->name, $Payload->price);
+        return new Product($payload->name, $payload->price);
     }
 }
 ```
